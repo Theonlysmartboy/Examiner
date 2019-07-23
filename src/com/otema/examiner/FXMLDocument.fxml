@@ -5,12 +5,23 @@
 <?import javafx.scene.control.ProgressBar?>
 <?import javafx.scene.control.ProgressIndicator?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
 <?import javafx.scene.text.Font?>
 
 
 <AnchorPane fx:id="root" prefHeight="400.0" prefWidth="600.0" styleClass="root" stylesheets="@resources/style/theme.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.otema.examiner.FXMLDocumentController">
    <children>
-      <FontAwesomeIcon iconName="CLOSE" layoutX="580.0" layoutY="18.0" onMouseClicked="#closeApp" styleClass="btnClose" />
+      <FontAwesomeIcon iconName="CLOSE" layoutX="584.0" layoutY="16.0" onMouseClicked="#closeApp" size="2em" styleClass="btnClose">
+         <fill>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop color="#f50707" />
+                  <Stop color="WHITE" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </fill>
+      </FontAwesomeIcon>
       <Label alignment="TOP_CENTER" layoutX="180.0" layoutY="11.0" prefHeight="53.0" prefWidth="222.0" styleClass="headingLabel" stylesheets="@resources/style/theme.css" text="EXAMINER " AnchorPane.leftAnchor="180.0" AnchorPane.rightAnchor="198.0" AnchorPane.topAnchor="11.0">
          <font>
             <Font size="36.0" />
