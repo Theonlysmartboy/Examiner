@@ -16,18 +16,13 @@ import javafx.scene.layout.AnchorPane;
 
 /**
  *
- * @author MASENO
+ * @author TheOnlySmartBoy
  */
 public class FXMLDocumentController implements Initializable {
     
     private Label label;
     @FXML
     private AnchorPane root;
-    
-    private void handleButtonAction(ActionEvent event) {
-        System.out.println("You clicked me!");
-        label.setText("Hello World!");
-    }
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
