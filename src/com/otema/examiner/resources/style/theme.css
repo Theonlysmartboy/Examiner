@@ -1,10 +1,65 @@
-/*
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
-*/
 /* 
     Created on : Jul 22, 2019, 11:12:49 AM
     Author     : TheOnlySmartBoy
 */
+.root{
+    -fx-background-image:url(../images/splashscreen.png);
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: center;
+    -fx-background-size: cover;
+}
+.label{
+    -fx-text-fill: #ffffff;
+}
+.textfield{
+    -fx-background-color:#333333;
+    -fx-cursor-color:white;
+    -fx-text-fill:#ffffff;
+}
+.button{
+    -fx-background-color:#4B0082;
+    -fx-background-radius:5px;
+    -fx-border-radius:5px;
+    -fx-border-style:solid;
+        -fx-text-fill:#FFFFFF;
 
+}
+.button:hover{
+    -fx-background-color: #330033;
+    -fx-border-style:solid;
+    -fx-border-radius:5px;
+    -fx-text-fill:#ffffff;
+}
+.button:pressed{
+    -fx-effect: dropshadow( gaussian , rgba(0,0,0,0.7) , 10,0,0,1 ); 
+    -fx-effect: innershadow( gaussian , rgba(0,0,0,0.7) , 20,0,0,0 );
+    -fx-border-style:solid;
+    -fx-border-radius:5px;
+    -fx-text-fill:#ffffff;
+}
+.signupbtn{
+    -fx-text-fill:#DAA520;
+    -fx-effect: dropshadow( gaussian , rgba(0,0,0,0.7) , 10,0,0,1 ); 
+    -fx-effect: innershadow( gaussian , rgba(0,0,0,0.7) , 20,0,0,0 );
+}
+.signupbtn:hover{
+    -fx-text-fill:#FFD700;
+}
+.signupbtn:active{
+    -fx-text-fill:#DAA520;
+}
+
+.pane{
+    -fx-background-color:#4B0082;
+
+}
+.icon{
+   -fx-text-fill:#ffffff;
+}
+.icon:hover{
+    -fx-text-fill:#ff0000;
+
+}
+.progress{
+        -fx-effect: dropshadow( gaussian , rgba(0,0,0,0.7) , 20,0,0,0 );
+}
