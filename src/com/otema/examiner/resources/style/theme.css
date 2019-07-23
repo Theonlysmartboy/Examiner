@@ -63,3 +63,9 @@
 .progress{
         -fx-effect: dropshadow( gaussian , rgba(0,0,0,0.7) , 20,0,0,0 );
 }
+.btnClose{
+     -fx-text-fill: #ffffff;
+}
+.headingLabel{
+     -fx-text-fill: #ffffff;
+}
