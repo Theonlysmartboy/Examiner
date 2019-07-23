@@ -1,11 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.control.ProgressIndicator?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
 
 <AnchorPane fx:id="root" prefHeight="400.0" prefWidth="600.0" styleClass="root" stylesheets="@resources/style/theme.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.otema.examiner.FXMLDocumentController">
    <children>
-      <FontAwesomeIcon iconName="CLOSE" layoutX="580.0" layoutY="18.0" onMouseClicked="#closeApp" styleClass="label" />
+      <FontAwesomeIcon iconName="CLOSE" layoutX="580.0" layoutY="18.0" onMouseClicked="#closeApp" styleClass="btnClose" />
+      <Label alignment="TOP_CENTER" layoutX="180.0" layoutY="11.0" prefHeight="53.0" prefWidth="222.0" styleClass="headingLabel" stylesheets="@resources/style/theme.css" text="EXAMINER " AnchorPane.leftAnchor="180.0" AnchorPane.rightAnchor="198.0" AnchorPane.topAnchor="11.0">
+         <font>
+            <Font size="36.0" />
+         </font>
+      </Label>
+      <Label layoutX="367.0" layoutY="47.0" styleClass="subHeadingLabel" text="PRO 1.0" />
+      <Label layoutY="378.0" text="All right reserved © 2019 Otema Technologies" />
+      <ProgressBar layoutY="225.0" prefHeight="15.0" prefWidth="600.0" progress="0.0" styleClass="progress" stylesheets="@resources/style/theme.css" />
+      <ProgressIndicator layoutX="278.0" layoutY="222.0" progress="0.0" styleClass="progress" stylesheets="@resources/style/theme.css" />
    </children>
 </AnchorPane>
