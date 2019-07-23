@@ -69,3 +69,6 @@
 .headingLabel{
      -fx-text-fill: #ffffff;
 }
+.subHeadingLabel{
+     -fx-text-fill: #FFD700;
+}
