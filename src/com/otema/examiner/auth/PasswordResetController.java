@@ -27,7 +27,9 @@ public class PasswordResetController implements Initializable {
 
     @FXML
     private AnchorPane rootPane;
+    @FXML
     private TextField uemail;
+    @FXML
     private JFXButton submit;
     private String email;
 
