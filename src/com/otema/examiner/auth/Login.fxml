@@ -1,11 +1,82 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXCheckBox?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1">
-    
+<AnchorPane fx:id="root" prefHeight="400.0" prefWidth="700.0" styleClass="root" stylesheets="@../resources/style/theme.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.otema.examiner.auth.LoginController">
+   <children>
+      <Label layoutX="247.0" layoutY="-7.0" styleClass="headingLabel" stylesheets="@../resources/style/theme.css" text="EXAMINER">
+         <font>
+            <Font name="Impact" size="36.0" />
+         </font>
+         <effect>
+            <DropShadow color="#0ad0bc" />
+         </effect>
+      </Label>
+      <PasswordField id="pwd" layoutX="179.0" layoutY="194.0" prefHeight="30.0" prefWidth="250.0" promptText="Password" styleClass="textfield">
+         <font>
+            <Font name="Calibri Light" size="14.0" />
+         </font>
+         <effect>
+            <DropShadow color="#0d9ef2" />
+         </effect>
+      </PasswordField>
+      <TextField id="uname" layoutX="179.0" layoutY="148.0" prefHeight="30.0" prefWidth="250.0" promptText="Email/UserName" styleClass="textfield">
+         <font>
+            <Font name="Calibri Light" size="14.0" />
+         </font>
+         <effect>
+            <DropShadow color="#0d9ef2" />
+         </effect>
+      </TextField>
+      <Label layoutX="285.0" layoutY="76.0" text="LOGIN">
+         <font>
+            <Font name="Impact" size="24.0" />
+         </font>
+      </Label>
+      <JFXButton id="signup" buttonType="RAISED" layoutX="249.0" layoutY="272.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="133.0" ripplerFill="#DAA520" styleClass="button" text="Sign In" textFill="WHITE">
+         <font>
+            <Font name="Calibri Light" size="14.0" />
+         </font></JFXButton>
+      <JFXCheckBox id="rem" layoutX="259.0" layoutY="243.0" mnemonicParsing="false" styleClass="label" text="Remember me" unCheckedColor="#333333">
+         <font>
+            <Font name="Calibri Light" size="14.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="DEFAULT" />
+         </cursor></JFXCheckBox>
+      <Label layoutX="179.0" layoutY="320.0" onMouseClicked="#loadRegistration" text="Forgot Password?">
+         <font>
+            <Font name="Calibri Light" size="14.0" />
+         </font>
+      </Label>
+      <FontAwesomeIcon iconName="CLOSE" layoutX="680.0" layoutY="18.0" onMouseClicked="#closeApp" size="1.5em" styleClass="icon">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <fill>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop color="RED" />
+                  <Stop color="WHITE" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </fill></FontAwesomeIcon>
+      <Label layoutX="382.0" layoutY="30.0" styleClass="subHeadingLabel" text="PRO 1.0">
+         <effect>
+            <DropShadow />
+         </effect>
+      </Label>
+      
+   </children>
 </AnchorPane>
