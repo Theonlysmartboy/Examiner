@@ -12,10 +12,13 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.ProgressBar;
 import javafx.scene.control.ProgressIndicator;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
+import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 import javafx.util.Duration;
 import javax.swing.JOptionPane;
 
@@ -32,7 +35,7 @@ public class FXMLDocumentController implements Initializable {
     private ProgressBar progressBar;
     @FXML
     private ProgressIndicator progressIndicator;
-
+   
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         progressBar.setProgress(0);

@@ -13,7 +13,7 @@
 <?import javafx.scene.paint.Stop?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="root" prefHeight="400.0" prefWidth="700.0" styleClass="root" stylesheets="@../resources/style/theme.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.otema.examiner.auth.LoginController">
+<AnchorPane fx:id="root" prefHeight="400.0" prefWidth="600.0" styleClass="root" stylesheets="@../resources/style/theme.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.otema.examiner.auth.LoginController">
    <children>
       <Label layoutX="247.0" layoutY="-7.0" styleClass="headingLabel" stylesheets="@../resources/style/theme.css" text="EXAMINER">
          <font>
@@ -55,7 +55,7 @@
          <cursor>
             <Cursor fx:constant="DEFAULT" />
          </cursor></JFXCheckBox>
-      <Label layoutX="179.0" layoutY="320.0" onMouseClicked="#loadRegistration" text="Forgot Password?">
+      <Label layoutX="179.0" layoutY="320.0" onMouseClicked="#loadResetPassword" text="Forgot Password?">
          <font>
             <Font name="Calibri Light" size="14.0" />
          </font>
