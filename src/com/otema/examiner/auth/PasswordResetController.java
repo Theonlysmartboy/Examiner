@@ -32,11 +32,6 @@ public class PasswordResetController implements Initializable {
         // TODO
     }
 
-    static boolean isValid(String email) {
-        String regex = "^[\\w-_\\.+]*[\\w-_\\.]\\@([\\w]+\\.)+[\\w]+[\\w]$";
-        return email.matches(regex);
-    }
-
     @FXML
     private void closeApp(MouseEvent event) {
         //Check for and handle accidental opening and clossing for app
@@ -45,7 +40,7 @@ public class PasswordResetController implements Initializable {
         if (n == JOptionPane.YES_OPTION) {
             System.exit(0);
         } else {
-            try {
+              try {
                 Parent root = FXMLLoader.load(getClass().getResource("Login.fxml"));
                 rootPane.getChildren().removeAll();
                 rootPane.setMinSize(700.0, 400.0);
