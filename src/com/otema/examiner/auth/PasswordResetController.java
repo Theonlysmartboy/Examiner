@@ -1,5 +1,6 @@
 package com.otema.examiner.auth;
 
+import com.jfoenix.controls.JFXButton;
 import com.otema.examiner.FXMLDocumentController;
 import java.io.IOException;
 import java.net.URL;
@@ -10,6 +11,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
+import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javax.swing.JOptionPane;
@@ -23,13 +25,18 @@ public class PasswordResetController implements Initializable {
 
     @FXML
     private AnchorPane rootPane;
+    private TextField uemail;
+    private JFXButton submit;
+    private String email;
 
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
+        submit.setOnMouseClicked(MouseEvent event);
+       email = uemail.getText();
+       
     }
 
     @FXML
