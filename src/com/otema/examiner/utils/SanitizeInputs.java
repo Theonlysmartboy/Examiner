@@ -1,5 +1,8 @@
 package com.otema.examiner.utils;
 
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 /**
  *
  * @author TheOnlySmartBoy
@@ -15,4 +18,11 @@ public class SanitizeInputs {
         return valid;
     }
 
+    public boolean isValidPassword(final String password) {
+        final String PASSWORD_PATTERN = "^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=])(?=\\S+$).{4,}$";
+        Pattern pattern = Pattern.compile(PASSWORD_PATTERN);
+        Matcher matcher = pattern.matcher(password);
+        return matcher.matches();
+
+    }
 }
