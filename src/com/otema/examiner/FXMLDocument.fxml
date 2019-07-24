@@ -1,18 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
+<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ProgressBar?>
 <?import javafx.scene.control.ProgressIndicator?>
+<?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.paint.LinearGradient?>
 <?import javafx.scene.paint.Stop?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane fx:id="root" prefHeight="400.0" prefWidth="600.0" styleClass="root" stylesheets="@resources/style/theme.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.otema.examiner.FXMLDocumentController">
+<AnchorPane fx:id="rootPane" prefHeight="400.0" prefWidth="600.0" styleClass="root" stylesheets="@resources/style/theme.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.otema.examiner.FXMLDocumentController">
    <children>
-      <FontAwesomeIcon iconName="CLOSE" layoutX="584.0" layoutY="16.0" onMouseClicked="#closeApp" size="2em" styleClass="btnClose">
+      <FontAwesomeIcon iconName="CLOSE" layoutX="584.0" layoutY="16.0" onMouseClicked="#closeApp" size="1.5em" styleClass="btnClose">
          <fill>
             <LinearGradient endX="1.0" endY="1.0">
                <stops>
@@ -21,15 +22,27 @@
                </stops>
             </LinearGradient>
          </fill>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
       </FontAwesomeIcon>
       <Label alignment="TOP_CENTER" layoutX="180.0" layoutY="11.0" prefHeight="53.0" prefWidth="222.0" styleClass="headingLabel" stylesheets="@resources/style/theme.css" text="EXAMINER " AnchorPane.leftAnchor="180.0" AnchorPane.rightAnchor="198.0" AnchorPane.topAnchor="11.0">
          <font>
-            <Font size="36.0" />
+            <Font name="Impact" size="36.0" />
          </font>
+         <effect>
+            <DropShadow />
+         </effect>
       </Label>
-      <Label layoutX="367.0" layoutY="47.0" styleClass="subHeadingLabel" text="PRO 1.0" />
+      <Label layoutX="358.0" layoutY="47.0" styleClass="subHeadingLabel" text="PRO 1.0">
+         <effect>
+            <DropShadow />
+         </effect></Label>
       <Label layoutY="378.0" text="All right reserved © 2019 Otema Technologies" />
-      <ProgressBar layoutY="225.0" prefHeight="15.0" prefWidth="600.0" progress="0.0" styleClass="progress" stylesheets="@resources/style/theme.css" />
-      <ProgressIndicator layoutX="278.0" layoutY="222.0" progress="0.0" styleClass="progress" stylesheets="@resources/style/theme.css" />
+      <ProgressBar fx:id="progressBar" layoutY="225.0" prefHeight="15.0" prefWidth="600.0" progress="0.0" styleClass="progress" stylesheets="@resources/style/theme.css" />
+      <ProgressIndicator fx:id="progressIndicator" layoutX="278.0" layoutY="222.0" progress="0.0" styleClass="progress" stylesheets="@resources/style/theme.css" />
    </children>
+   <effect>
+      <DropShadow color="#000000e9" />
+   </effect>
 </AnchorPane>
