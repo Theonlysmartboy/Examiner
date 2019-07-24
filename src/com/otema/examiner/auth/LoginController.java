@@ -1,9 +1,15 @@
 package com.otema.examiner.auth;
 
+import com.otema.examiner.FXMLDocumentController;
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javax.swing.JOptionPane;
@@ -16,7 +22,7 @@ import javax.swing.JOptionPane;
 public class LoginController implements Initializable {
 
     @FXML
-    private AnchorPane root;
+    private AnchorPane rootPane;
 
     /**
      * Initializes the controller class.
@@ -24,11 +30,20 @@ public class LoginController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-    }    
+    }
 
     @FXML
     private void loadResetPassword(MouseEvent event) {
-        
+        try {
+            Parent root = FXMLLoader.load(getClass().getResource("PasswordReset.fxml"));
+            rootPane.getChildren().removeAll();
+            rootPane.setMinSize(700.0, 400.0);
+            rootPane.getChildren().setAll(root);
+
+        } catch (IOException ex) {
+            Logger.getLogger(FXMLDocumentController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
     }
 
     @FXML
@@ -42,5 +57,5 @@ public class LoginController implements Initializable {
 
         }
     }
-    
+
 }

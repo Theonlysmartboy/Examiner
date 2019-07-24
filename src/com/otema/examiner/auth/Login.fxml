@@ -13,7 +13,7 @@
 <?import javafx.scene.paint.Stop?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="root" prefHeight="400.0" prefWidth="600.0" styleClass="root" stylesheets="@../resources/style/theme.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.otema.examiner.auth.LoginController">
+<AnchorPane fx:id="rootPane" prefHeight="400.0" prefWidth="600.0" styleClass="root" stylesheets="@../resources/style/theme.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.otema.examiner.auth.LoginController">
    <children>
       <Label layoutX="247.0" layoutY="-7.0" styleClass="headingLabel" stylesheets="@../resources/style/theme.css" text="EXAMINER">
          <font>
@@ -60,7 +60,7 @@
             <Font name="Calibri Light" size="14.0" />
          </font>
       </Label>
-      <FontAwesomeIcon iconName="CLOSE" layoutX="680.0" layoutY="18.0" onMouseClicked="#closeApp" size="1.5em" styleClass="icon">
+      <FontAwesomeIcon iconName="CLOSE" layoutX="585.0" layoutY="13.0" onMouseClicked="#closeApp" size="1.5em" styleClass="icon">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>

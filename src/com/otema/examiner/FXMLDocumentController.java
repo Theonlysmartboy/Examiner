@@ -12,13 +12,10 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.ProgressBar;
 import javafx.scene.control.ProgressIndicator;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
-import javafx.stage.Stage;
-import javafx.stage.StageStyle;
 import javafx.util.Duration;
 import javax.swing.JOptionPane;
 
@@ -35,7 +32,7 @@ public class FXMLDocumentController implements Initializable {
     private ProgressBar progressBar;
     @FXML
     private ProgressIndicator progressIndicator;
-   
+
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         progressBar.setProgress(0);
@@ -46,7 +43,6 @@ public class FXMLDocumentController implements Initializable {
         progressBar.progressProperty().bind(copyWorker.progressProperty());
         progressIndicator.progressProperty().bind(copyWorker.progressProperty());
         FadeTransition.applyFadeTransition(rootPane, Duration.seconds(5), (e) -> {
-
             new Thread(copyWorker).start();
         });
 
@@ -64,7 +60,9 @@ public class FXMLDocumentController implements Initializable {
                             try {
                                 Parent root = FXMLLoader.load(getClass().getResource("/com/otema/examiner/auth/Login.fxml"));
                                 rootPane.getChildren().removeAll();
+                                rootPane.setMinSize(700.0, 400.0);
                                 rootPane.getChildren().setAll(root);
+
                             } catch (IOException ex) {
                                 Logger.getLogger(FXMLDocumentController.class.getName()).log(Level.SEVERE, null, ex);
                             }
