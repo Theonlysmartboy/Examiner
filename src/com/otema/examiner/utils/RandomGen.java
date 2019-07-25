@@ -10,7 +10,7 @@ public class RandomGen {
 
     //Generate Password
     public static String passwordGen() {
-        String pass = "N";
+        String pass = "N.2";
         final String alphabet = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ@#$%^&*_()/|!.?abcdefghijklmnopqrstuvwxyz";
         final int N = alphabet.length();
         Random r = new Random();
