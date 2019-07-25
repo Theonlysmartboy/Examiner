@@ -82,7 +82,7 @@ public class PasswordResetController implements Initializable {
                 } 
                 //save
                 else {
-                    
+                    //connect to the db and check the email             
                 }
             }
         });
