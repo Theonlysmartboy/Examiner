@@ -13,22 +13,20 @@ import java.util.logging.Logger;
 public class DbConnect {
 
     static String host = "jdbc:mysql://localhost:3309/";
-    static String db = "ihis";
+    static String db = "exam_analyzer_db";
     static String dbuser = "Tosby";
     static String dbuserpass = "MasterTosby2";
 
-    public static void connect() {
+    public static Connection getConnection() {
+        Connection conn = null;
         try {
             Class.forName("com.mysql.jdbc.Driver");
-            Connection conn = DriverManager.getConnection(host + db, dbuser, dbuserpass);
-            if (conn != null) {
-                System.out.println("Connection successfull");
-            }
-
+            conn = DriverManager.getConnection(host + db, dbuser, dbuserpass);
         } catch (SQLException ex) {
             Logger.getLogger(Connection.class.getName()).log(Level.SEVERE, null, ex);
         } catch (ClassNotFoundException ex) {
             Logger.getLogger(Connection.class.getName()).log(Level.SEVERE, null, ex);
         }
+        return conn;
     }
 }
