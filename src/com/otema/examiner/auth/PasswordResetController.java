@@ -2,9 +2,13 @@ package com.otema.examiner.auth;
 
 import com.jfoenix.controls.JFXButton;
 import com.otema.examiner.FXMLDocumentController;
+import com.otema.examiner.resources.db.DbConnect;
 import com.otema.examiner.utils.SanitizeInputs;
 import java.io.IOException;
 import java.net.URL;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -62,8 +66,7 @@ public class PasswordResetController implements Initializable {
                             Logger.getLogger(FXMLDocumentController.class.getName()).log(Level.SEVERE, null, ex);
                         }
                     }
-                } 
-                //check for valid email entry
+                } //check for valid email entry
                 else if (!SanitizeInputs.isValidEmail(email)) {
                     Object[] options = {"Try again", "Cancel"};
                     int n = JOptionPane.showOptionDialog(null, "Please Enter a valid email ", "Reset Password", JOptionPane.YES_NO_OPTION, JOptionPane.WARNING_MESSAGE, null, options, options[0]);
@@ -79,10 +82,20 @@ public class PasswordResetController implements Initializable {
                             Logger.getLogger(FXMLDocumentController.class.getName()).log(Level.SEVERE, null, ex);
                         }
                     }
-                } 
-                //save
+                } //save
                 else {
-                    //connect to the db and check the email             
+                    try {
+                        //connect to the db and check the email
+
+                        Statement stmt = DbConnect.getConnection().createStatement();
+                        ResultSet rs = stmt.executeQuery("select * from emp where email="+email);
+                        while (rs.next()) {
+                            System.out.println(rs.getInt(1) + "  " + rs.getString(2) + "  " + rs.getString(3));
+                        }
+                    } catch (SQLException ex) {
+                        Logger.getLogger(PasswordResetController.class.getName()).log(Level.SEVERE, null, ex);
+                    }
+
                 }
             }
         });
