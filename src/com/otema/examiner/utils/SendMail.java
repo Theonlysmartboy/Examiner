@@ -18,10 +18,10 @@ import javax.mail.internet.MimeMessage;
 public class SendMail {
 
     private static final String SMTP_SERVER = "smtp.gmail.com"; // smtp server adress/ip
-    private static final String USERNAME = ""; //email adress
-    private static final String PASSWORD = ""; //email password
+    private static final String USERNAME = "o2jsmartboy@gmail.com"; //Your gmail adress
+    private static final String PASSWORD = "vgnjjefnqdfbsgkl"; //Your gmail passwordd
 
-   public static boolean sendMail(String from, String to, String cc, String subject, String message) {
+    public static boolean sendMail(String from, String to, String cc, String subject, String message) {
         Properties prop = new Properties();
 
         prop.put("mail.debug", "true");
@@ -42,10 +42,10 @@ public class SendMail {
             msg.setFrom(new InternetAddress(from));
             // to 
             msg.addRecipient(Message.RecipientType.TO,
-                   new InternetAddress(to));
+                    new InternetAddress(to));
             // cc
             msg.addRecipient(Message.RecipientType.CC,
-                   new InternetAddress(cc));
+                    new InternetAddress(cc));
             // subject
             msg.setSubject(subject);
             // content 
