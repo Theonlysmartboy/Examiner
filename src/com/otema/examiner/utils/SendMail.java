@@ -16,8 +16,8 @@ import javax.mail.internet.MimeMessage;
 public class SendMail {
 
     private static final String SMTP_SERVER = "smtp.gmail.com"; // smtp server adress/ip
-    private static final String USERNAME = ""; //Your gmail adress
-    private static final String PASSWORD = ""; //Your gmail password
+    private static final String USERNAME = ""; //email adress
+    private static final String PASSWORD = ""; //email password
 
     public static boolean sendMail(String from, String to, String cc, String subject, String message) {
         Properties prop = System.getProperties();
