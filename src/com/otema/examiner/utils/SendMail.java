@@ -1,8 +1,9 @@
 package com.otema.examiner.utils;
 
-import com.sun.mail.smtp.SMTPTransport;
 import java.util.Date;
 import java.util.Properties;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.mail.Message;
 import javax.mail.MessagingException;
 import javax.mail.PasswordAuthentication;
@@ -32,6 +33,7 @@ public class SendMail {
         prop.put("mail.smtp.port", "465"); // default port is 25 but to use TLS we need port 587
         Session session = Session.getDefaultInstance(prop,
                 new javax.mail.Authenticator() {
+            @Override
             protected PasswordAuthentication getPasswordAuthentication() {
                 return new PasswordAuthentication(USERNAME, PASSWORD);
             }
@@ -59,7 +61,7 @@ public class SendMail {
             Transport.send(msg, msg.getAllRecipients());
             System.out.println("Mail sent successfuly ");
         } catch (MessagingException e) {
-            e.printStackTrace();
+            Logger.getLogger(SendMail.class.getName()).log(Level.SEVERE, null, e);
             return false;
         }
         return true;
