@@ -21,47 +21,38 @@ import javax.mail.internet.MimeMessage;
  * @author TheOnlySmartBoy
  */
 public class SendHtmlMail {
+
     private static final String SMTP_SERVER = "smtp.gmail.com";
     private static final String USERNAME = "";
     private static final String PASSWORD = "";
 
-    public static boolean sendMailWithAttachment(String from, String to, String cc, String subject, String message) {
+    public static boolean sendHtmlMailAttachment(String from, String to, String cc, String subject, String message) {
 
         Properties prop = System.getProperties();
         prop.put("mail.smtp.auth", "true");
 
         Session session = Session.getInstance(prop, null);
-        Message msg = new MimeMessage(session);
+        MimeMessage msg = new MimeMessage(session);
 
         try {
-
             msg.setFrom(new InternetAddress(from));
-
             msg.setRecipients(Message.RecipientType.TO,
                     InternetAddress.parse(to, false));
-
             msg.setRecipients(Message.RecipientType.CC,
                     InternetAddress.parse(cc, false));
-
             msg.setSubject(subject);
-
             // HTML email
             msg.setDataHandler(new DataHandler(new HTMLDataSource(message)));
 
             SMTPTransport t = (SMTPTransport) session.getTransport("smtp");
-
             // connect
             t.connect(SMTP_SERVER, USERNAME, PASSWORD);
-
             // send
             t.sendMessage(msg, msg.getAllRecipients());
-
             System.out.println("Response: " + t.getLastServerResponse());
-
             t.close();
-
         } catch (MessagingException e) {
-           Logger.getLogger(SendHtmlMail.class.getName()).log(Level.SEVERE, null, e);
+            Logger.getLogger(SendHtmlMail.class.getName()).log(Level.SEVERE, null, e);
             return false;
         }
         return false;
